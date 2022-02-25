@@ -10,28 +10,26 @@ class MyParcel extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            toolbarHeight: 120,
             floating: true,
             snap: false,
             pinned: true,
-            title: Padding(
-              padding: const EdgeInsets.only(top: 40.0),
-              child: Text(
-                'Track Parcel',
-                style: Theme.of(context).textTheme.headline1,
-              ),
+            title: Text(
+              'Track Parcel',
+              style: Theme.of(context).textTheme.headline1,
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(top: 40, right: 20.0),
-                child: Container(
-                  height: 50,
-                  decoration: const BoxDecoration(shape: BoxShape.circle),
-                  child: Image.network(
-                      'https://miro.medium.com/fit/c/1360/1360/2*NDZrabY3uLA-1MM3K1MexQ.png'),
-                ),
+                padding: const EdgeInsets.only(right:20.0),
+                child: CircleAvatar(
+                    child: ClipOval(
+                      child: Image.network(
+                          'https://miro.medium.com/fit/c/1360/1360/2*NDZrabY3uLA-1MM3K1MexQ.png'),
+                    ),
+                  ),
               ),
             ],
-            expandedHeight: 426,
+            expandedHeight: 406,
             shadowColor: Colors.transparent,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -47,6 +45,7 @@ class MyParcel extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    
                     Text(
                       'Enter parcel number or scan QR code',
                       style: Theme.of(context).textTheme.headline5,

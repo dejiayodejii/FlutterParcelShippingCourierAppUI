@@ -3,6 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:parcel_delivery_app/views/my_parcel.dart';
+import 'package:parcel_delivery_app/views/parcelCenter.dart';
+import 'package:parcel_delivery_app/views/sendParcel/sendparcel_size.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,8 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<Widget> pages = [
     const MyParcel(),
-    const Text('Hello'),
-    const Text('Helllll'),
+    const SendParcelSizeScreen(),
+    const ParcelCenterScreen()
 
   ];
 

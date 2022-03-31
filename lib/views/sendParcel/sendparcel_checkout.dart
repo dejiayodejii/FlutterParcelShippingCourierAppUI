@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class SendParcelCheckout extends StatelessWidget {
   const SendParcelCheckout({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class SendParcelCheckout extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Stack(
                     children: [
@@ -73,29 +74,36 @@ class SendParcelCheckout extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).shadowColor,
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
+            Flexible(child: Container()),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                //color: Colors.red,
+                color: Theme.of(context).shadowColor,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Summary',
-                          style: Theme.of(context).textTheme.headline3,
-                        ),
-                        SizedBox(
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Summary',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                          Get.back();
+                        },
+                        child: SizedBox(
                           width: 50,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,96 +125,72 @@ class SendParcelCheckout extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Container(
-                      //color: Colors.red,
-                      child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Recipient',
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            'Ayanbunmi Ayodeji',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          Text(
-                            'dejiayodeji@gmail.com',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          Text(
-                            '08146852681',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          Text(
-                            '11 Rosemount Meadows, Glasgow, G71 8EL',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Recipient',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                      Text(
+                        'Ayanbunmi Ayodeji',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      Text(
+                        'dejiayodeji@gmail.com',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      Text(
+                        '08146852681',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      Text(
+                        '11 Rosemount Meadows, Glasgow, G71 8EL',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Parcel Size',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      Text(
+                        'Medium',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Delivery Method',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                      Text(
+                        'From door to door',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: double.infinity,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        r'Pay $12',
+                        style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ),
-                    Container(
-                      //color: Colors.blue,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Parcel Size',
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
-                          Text(
-                            'Medium',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                     // color: Colors.green,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Delivery Method',
-                            style: Theme.of(context).textTheme.headline3,
-                          ),
-                          Text(
-                            'From door to door',
-                            style: Theme.of(context).textTheme.headline5,
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 50,
-                      width: double.infinity,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          r'Pay $12',
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             )
           ],

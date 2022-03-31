@@ -15,20 +15,23 @@ class ParcelSizeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const SendParcelDeliveryScreen()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => const SendParcelDeliveryScreen()));
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 15),
-        padding: const EdgeInsets.only(top: 15, bottom: 20, left: 15, right: 15),
+        padding:
+            const EdgeInsets.only(top: 15, bottom: 20, left: 15, right: 15),
         height: 115,
         decoration: BoxDecoration(
             color: Theme.of(context).backgroundColor,
             borderRadius: BorderRadius.circular(5),
             boxShadow: [
               BoxShadow(
-                  blurRadius:10,
+                  blurRadius: 10,
                   offset: const Offset(0, 0),
                   spreadRadius: 0,
                   color: Theme.of(context).shadowColor)
@@ -41,6 +44,7 @@ class ParcelSizeWidget extends StatelessWidget {
               width: 66,
               decoration: BoxDecoration(
                 image: DecorationImage(
+                  fit: BoxFit.cover,
                   image: AssetImage(sizeImage!),
                 ),
               ),
@@ -54,14 +58,17 @@ class ParcelSizeWidget extends StatelessWidget {
               children: [
                 Text(
                   size!,
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                 const SizedBox(
+                  height: 3,
                 ),
                 Text(
                   dimension!,
                   style: Theme.of(context).textTheme.headline5,
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 8,
                 ),
                 Text(
                   description!,

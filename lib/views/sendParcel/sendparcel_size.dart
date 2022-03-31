@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parcel_delivery_app/views/widgets/parcel_size_widget.dart';
+import 'package:parcel_delivery_app/utilities/widgets/parcel_size_widget.dart';
 
 class SendParcelSizeScreen extends StatelessWidget {
   const SendParcelSizeScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class SendParcelSizeScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headline1,
             ),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
             Text(
               'Parcel Size',
